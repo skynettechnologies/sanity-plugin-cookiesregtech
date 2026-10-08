@@ -1,0 +1,72 @@
+{
+  "name": "sanity-plugin-cookiesregtech",
+  "version": "1.0.0",
+  "description": "CookiesRegTech cookie consent: guided connect from the Studio, banner with automatic tracker blocking, Google Consent Mode, cookie scanner, and consent log.",
+  "keywords": [
+    "sanity",
+    "sanity-plugin"
+  ],
+  "homepage": "https://github.com/skynettechnologies/sanity-plugin-cookiesregtech#readme",
+  "bugs": {
+    "url": "https://github.com/skynettechnologies/sanity-plugin-cookiesregtech/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/skynettechnologies/sanity-plugin-cookiesregtech.git"
+  },
+  "license": "MIT",
+  "author": "Skynet Technologies USA LLC <developer3@skynettechnologies.com>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": {
+      "source": "./src/index.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "plugin-kit verify-package --silent && pkg-utils build --strict --clean && tsc --noEmit",
+    "format": "oxfmt",
+    "link-watch": "plugin-kit link-watch",
+    "lint": "oxlint",
+    "prepublishOnly": "npm run build",
+    "watch": "pkg-utils watch --strict"
+  },
+  "devDependencies": {
+    "@sanity/pkg-utils": "^13.0.4",
+    "@sanity/plugin-kit": "^10.0.11",
+    "@types/react": "^19.3.0",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "oxlint-tsgolint": "^7.0.2003",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "sanity": "^6.17.0",
+    "styled-components": "^6.5.3",
+    "typescript": "^6.0.3"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "sanity": "^5 || ^6.0.0-0"
+  },
+  "engines": {
+    "node": ">=20.19 <22 || >=22.12"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": "./dist/index.js",
+      "./package.json": "./package.json"
+    }
+  },
+  "sanityPlugin": {
+    "verifyPackage": {
+      "scripts": false,
+       "tsconfig": false
+    }
+  }
+}
